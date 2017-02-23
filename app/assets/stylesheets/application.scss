@@ -47,7 +47,13 @@
  }
 
 #doc-img {
-  border-radius: 50%;
+  width: 100%;
+}
+
+.photoback {
+  background: image_url(DrGarrity2) left / contain no-repeat;;
+  background-position: left;
+  height: 100%;
 }
 
 .font1 {
