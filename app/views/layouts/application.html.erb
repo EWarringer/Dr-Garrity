@@ -7,11 +7,22 @@
     <%= stylesheet_link_tag '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css' %>
     <%= stylesheet_link_tag '//fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans:400,300' %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
-    
+
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
+
+    <%= render partial: "shared/nav" unless @disable_nav %>
+
+    <div class="flash-messages">
+      <%- flash.each do |key, value| -%>
+        <div class="flash flash-<%= key %>">
+          <%= value %>
+        </div>
+      <%- end -%>
+    </div>
+
     <%= yield %>
   </body>
 </html>
